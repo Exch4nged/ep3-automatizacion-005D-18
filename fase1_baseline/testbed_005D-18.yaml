@@ -1,5 +1,6 @@
 devices:
-  CSR1kv:
+  RTR-LABBIOS:
+    alias: CSR1kv
     os: iosxe
     type: router
     credentials:
