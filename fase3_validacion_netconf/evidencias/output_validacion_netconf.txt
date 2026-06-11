@@ -1,0 +1,20 @@
+==================================================
+Script  : validacion_netconf.py
+Alumno  : 005D-18 — Axl Jesus Urrutia Maldonado
+Fecha   : 2026-06-11 06:59:06.097589
+Host VM : labvm
+==================================================
+
+Conectando al router via NETCONF...
+XML guardado en evidencias/rpc_reply_raw.xml
+
+--- RESULTADO DE VALIDACION NETCONF ---
+  [OK]  Hostname: esperado='RTR-LABBIOS' actual='RTR-LABBIOS'
+  [OK]  Loopback IP: esperado='10.5.18.1' actual='10.5.18.1'
+  [OK]  Loopback Mask: esperado='255.255.255.0' actual='255.255.255.0'
+  [OK]  Descripcion WAN: esperado='Enlace-WAN-Chillan' actual='Enlace-WAN-Chillan'
+  [OK]  NTP Server: esperado='8.8.8.8' actual='8.8.8.8'
+
+Resultado: 5/5 criterios conformes
+
+>>> RESULTADO GLOBAL: CONFORME
