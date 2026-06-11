@@ -1,0 +1,27 @@
+
+PLAY [EP3 - Aprovisionamiento RTR-LABBIOS] ***************************************************
+
+TASK [Respaldar configuracion actual] ********************************************************
+ok: [csr1kv]
+
+TASK [Guardar respaldo en archivo] ***********************************************************
+changed: [csr1kv -> localhost]
+
+TASK [Habilitar NETCONF] *********************************************************************
+ok: [csr1kv]
+
+TASK [Habilitar RESTCONF] ********************************************************************
+ok: [csr1kv]
+
+TASK [Habilitar HTTP seguro] *****************************************************************
+ok: [csr1kv]
+
+TASK [Configurar hostname corporativo] *******************************************************
+changed: [csr1kv]
+
+TASK [Configurar banner de acceso] ***********************************************************
+fatal: [csr1kv]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'banner'\n\nThe error appears to be in '/home/devasc/ep3-automatizacion-005D-18/fase2_aprovisionamiento/playbook_005D-18.yaml': line 41, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: \"Configurar banner de acceso\"\n      ^ here\n"}
+
+PLAY RECAP ***********************************************************************************
+csr1kv                     : ok=6    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

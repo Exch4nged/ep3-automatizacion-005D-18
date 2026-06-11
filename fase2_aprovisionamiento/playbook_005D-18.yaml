@@ -1,0 +1,62 @@
+---
+- name: "EP3 - Aprovisionamiento RTR-LABBIOS"
+  hosts: routers
+  gather_facts: no
+  vars_files:
+    - ../vars/vars_005D-18.yaml
+
+  tasks:
+
+    - name: "Respaldar configuracion actual"
+      cisco.ios.ios_command:
+        commands: show running-config
+      register: backup_output
+
+    - name: "Guardar respaldo en archivo"
+      copy:
+        content: "{{ backup_output.stdout[0] }}"
+        dest: "{{ playbook_dir }}/respaldo/backup_005D-18.cfg"
+      delegate_to: localhost
+      changed_when: false
+
+    - name: "Habilitar NETCONF"
+      cisco.ios.ios_config:
+        lines:
+          - netconf-yang
+
+    - name: "Habilitar RESTCONF"
+      cisco.ios.ios_config:
+        lines:
+          - restconf
+
+    - name: "Habilitar HTTP seguro"
+      cisco.ios.ios_config:
+        lines:
+          - ip http secure-server
+
+    - name: "Configurar hostname corporativo"
+      cisco.ios.ios_config:
+        lines:
+          - "hostname {{ cliente.hostname }}"
+
+    - name: "Configurar banner de acceso"
+      cisco.ios.ios_config:
+        lines:
+          - "banner motd ^C {{ cliente.banner }} ^C"
+
+    - name: "Configurar servidor NTP"
+      cisco.ios.ios_config:
+        lines:
+          - "ntp server {{ router.ntp_server }}"
+
+    - name: "Configurar descripcion interfaz GigabitEthernet1"
+      cisco.ios.ios_config:
+        lines:
+          - "description {{ router.descripcion_wan }}"
+        parents: "interface GigabitEthernet1"
+
+    - name: "Crear interfaz Loopback con IP de gestion"
+      cisco.ios.ios_config:
+        lines:
+          - "ip address {{ router.loopback_ip }} {{ router.loopback_mask }}"
+        parents: "interface Loopback{{ router.loopback_id }}"
