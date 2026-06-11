@@ -1,0 +1,27 @@
+14a15,40
+>               "10.5.18.0/24": {
+>                 "active": true,
+>                 "next_hop": {
+>                   "outgoing_interface": {
+>                     "Loopback18": {
+>                       "outgoing_interface": "Loopback18"
+>                     }
+>                   }
+>                 },
+>                 "route": "10.5.18.0/24",
+>                 "source_protocol": "connected",
+>                 "source_protocol_codes": "C"
+>               },
+>               "10.5.18.1/32": {
+>                 "active": true,
+>                 "next_hop": {
+>                   "outgoing_interface": {
+>                     "Loopback18": {
+>                       "outgoing_interface": "Loopback18"
+>                     }
+>                   }
+>                 },
+>                 "route": "10.5.18.1/32",
+>                 "source_protocol": "local",
+>                 "source_protocol_codes": "L"
+>               },

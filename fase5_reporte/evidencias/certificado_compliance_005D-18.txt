@@ -1,0 +1,19 @@
+
+========================================================
+   CERTIFICADO DE COMPLIANCE — EP3 DRY7122
+========================================================
+Alumno   : Axl Jesus Urrutia Maldonado
+Código   : 005D-18
+Empresa  : Laboratorios Bios SpA
+Router   : RTR-LABBIOS
+Fecha    : 2026-06-11 07:18:46
+--------------------------------------------------------
+Validación NETCONF  : CONFORME
+Validación RESTCONF : CONFORME
+Diff baseline/final : DETECTADO
+--------------------------------------------------------
+RESULTADO FINAL     : CONFORME
+========================================================
+El equipo RTR-LABBIOS ha sido aprovisionado
+correctamente y está listo para operar en producción.
+========================================================
